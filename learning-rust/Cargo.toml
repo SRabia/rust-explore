@@ -1,0 +1,9 @@
+[workspace]
+
+members = [
+    "adder",
+    "sort",
+    "hello-rust",
+]
+
+

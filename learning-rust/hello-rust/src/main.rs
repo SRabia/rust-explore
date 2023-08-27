@@ -1,6 +1,5 @@
 
-use std::fs::File;
-
+use sort;
 fn nth_word(s:&str, nb_word_slice:u32) ->&str
 {
     let bytes: &[u8] =s.as_bytes();
@@ -25,12 +24,11 @@ fn main() {
     let s:String = String::from("helll in your");
     println!("{}", nth_word(&s, 30));
 
-    let a = [1, 2, 3, 4, 5];
-    let slice = &a[1..3];
+    let mut a = [1, 2, 3, 4, 5];
+    sort::my_sort_toto(&mut a);
+    // let slice = &a[1..3];
 
-    assert_eq!(slice, &[2,3]);
-
-    let g = File::open("heloo.txt");
+    // assert_eq!(slice, &[2,3]);
 
 }
 

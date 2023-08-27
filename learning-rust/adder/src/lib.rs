@@ -1,3 +1,9 @@
+//!# adder
+//!
+//! `adder` is a collection of utulities to make performing certain 
+//! calculation bla bla bla
+
+
 #[derive(Debug)]
 struct Rectangle {
     w: u32,
@@ -5,12 +11,20 @@ struct Rectangle {
 }
 
 #[derive(Debug)]
-struct Guess {
-    value: u32,
+pub struct Guess {
+    pub value: u32,
 }
 
+
 impl Guess {
-    fn new(value: u32) ->Self{
+    /// new guess number
+    /// create a guess number that is between 1 and g100
+    /// # Example usage
+    /// ```
+    /// use adder::Guess;
+    /// let guess = Guess::new(3);
+    /// ```
+    pub fn new(value: u32) ->Self{
         if value < 1{
             panic!("Guess value must be greater than or equal to 1, got {}", value);
         }
@@ -29,6 +43,10 @@ impl Rectangle {
         Self{h,w}
     }
 }
+
+fn greeting(name: &str) ->String{
+    format!("Hello {}", name)
+}
 //this is just so we avoid warning! 
 pub fn no_warn(){
     let s = Rectangle::rec(1, 8);
@@ -42,13 +60,23 @@ pub fn prints_and_returns_10(a: i32) ->i32 {
     10
 }
 
+/// Adds 2 numbers to the number given.
+/// 
+/// # Examples
+///
+/// ```
+/// use adder::add;
+/// let arg1 = 5;
+/// let arg2 = 5;
+/// let answer = add(arg1, arg2);
+///
+/// assert_eq!(10, answer);
+/// ````
+/// `
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
 
-fn greeting(name: &str) ->String{
-    format!("Hello {}", name)
-}
 
 #[cfg(test)]
 mod tests {

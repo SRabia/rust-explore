@@ -7,3 +7,7 @@ edition = "2021"
 
 [dependencies]
 ferris-says = "0.2"
+sort = {path = "../sort"}
+
+[profile.dev]
+opt-level =0
