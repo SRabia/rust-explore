@@ -52,7 +52,7 @@ pub fn search_insensitive<'a>(query: &str, content: &'a str) ->Vec<&'a str>{
     let query = query.to_lowercase();
     content
         .lines()
-        .filter(|line| line.to_lowercase() // return a String here
+        .filter(|line| line.to_lowercase() //return a String here
             .contains(&query))// we need to pass the string ref here because tolow return String
         .collect()
 

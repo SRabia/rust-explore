@@ -4,6 +4,9 @@ members = [
     "adder",
     "sort",
     "hello-rust",
+    "minigrep",
+    "pointer",
+    "mocking",
 ]
 
 
