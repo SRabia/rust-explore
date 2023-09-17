@@ -7,6 +7,10 @@ members = [
     "minigrep",
     "pointer",
     "mocking",
+    "thread",
+    "mutex",
+    "oop",
+    "blog",
 ]
 
 
