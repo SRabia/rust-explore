@@ -107,9 +107,6 @@ fn main() {
 
     let arr_2 = [1,2,3,4, 5,6,6];
     let mut loop_idx =0;
-    while loop_idx< arr_2[loo] {
-        
-    }
     
 
 }

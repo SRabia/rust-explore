@@ -11,6 +11,8 @@ members = [
     "mutex",
     "oop",
     "blog",
+    "blog-2",
 ]
+
 
 
