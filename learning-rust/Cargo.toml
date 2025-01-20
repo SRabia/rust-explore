@@ -1,4 +1,5 @@
 [workspace]
+resolver ="2"
 
 members = [
     "adder",
@@ -11,7 +12,8 @@ members = [
     "mutex",
     "oop",
     "blog",
-    "blog-2",
+    "blog-2", 
+    "timer_future", "toki",
 ]
 
 

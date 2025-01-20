@@ -1,23 +1,39 @@
-use std::sync::{Mutex, Arc};
+use std::sync::{Arc, Mutex};
 use std::thread;
 fn main() {
+    // let counter = Arc::new(Mutex::new(0));
+
+    // let mut handles = vec![];
+
+    // for _ in 0..10{
+    //     let counter = Arc::clone(&counter);
+    //     let handle = thread::spawn(move ||{
+    //         let mut num = counter.lock().unwrap();
+    //         *num +=1;
+    //     });
+    //     handles.push(handle);
+    // }
+
+    // for handle in handles{
+    //     handle.join().unwrap();
+    // }
+
+    // println!("result: {}", counter.lock().unwrap());
+
     let counter = Arc::new(Mutex::new(0));
+    let mut handlers = vec![];
 
-    let mut handles = vec![];
-
-    for _ in 0..10{
-        let counter = Arc::clone(&counter);
-        let handle = thread::spawn(move ||{
-            let mut num = counter.lock().unwrap();
-            *num +=1;
+    for _ in 0..10 {
+        let counter = counter.clone();
+        // let counter = Rc::clone(&counter);
+        let handle = thread::spawn(move || {
+            let mut n = counter.lock().unwrap();
+            *n += 1;
         });
-        handles.push(handle);
+        handlers.push(handle);
     }
 
-    for handle in handles{
-        handle.join().unwrap();
+    for h in handlers {
+        h.join().unwrap();
     }
-
-    println!("result: {}", counter.lock().unwrap());
-    
 }
