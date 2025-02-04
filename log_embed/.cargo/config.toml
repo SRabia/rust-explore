@@ -6,7 +6,14 @@ rustflags = [
     "-C", "link-arg=-Tlink.x",
     "-C", "link-arg=-Tdefmt.x",
     ]
-runner = "probe-rs run --chip nRF52833_xxAA"
+runner = [
+  "probe-rs",
+  "run",
+  "--chip",
+  "nRF52833_xxAA",
+  "--log-format", #changing format
+  "{L} {s}",
+]
 
 [env]
 DEFMT_LOG = "trace"
